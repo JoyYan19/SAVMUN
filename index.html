@@ -100,9 +100,9 @@
 
   <section id="submission" class="container">
     <h2 class="section-title">Position Paper Submission</h2>
-    <p class="note">Use this submission form for delegates. Submissions are sent via Formspree (replace YOUR_FORM_ID with your actual Formspree form ID).</p>
+    <p class="note">Use this submission form for delegates. Submissions are handled by Netlify Forms (deploy to Netlify to enable).</p>
     <div class="card">
-      <form id="paperForm" class="form-col" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+      <form id="paperForm" class="form-col" data-netlify="true" enctype="multipart/form-data">
         <label for="delegateName">Delegate Name *</label>
         <input id="delegateName" name="delegateName" required />
 
