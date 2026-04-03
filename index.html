@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model United Nations Conference</title>
+  <style>
+    :root {
+      --bg:#f5f8ff;--card:#fff;--primary:#0f4fa6;--secondary:#3b82f6;--dark:#0b254f;--text:#1f2a44;--muted:#58617c;--radius:14px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+    .topbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e6ecf5;padding:.7rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:.75rem;box-shadow:0 2px 10px rgba(15,79,166,.1);}
+    .topbar a{font-weight:600;color:var(--dark);text-decoration:none;font-size:.95rem;}
+    .topbar a:hover{text-decoration:underline;}
+    .hero{background:linear-gradient(135deg,#0f4fa6,#3b82f6);color:#fff;text-align:center;padding:6rem 1rem;position:relative;}
+    .hero::before{content:'';position:absolute;inset:0;background:rgba(2,31,71,.28);}
+    .hero>div{position:relative;z-index:1;max-width:760px;margin:0 auto;}
+    .hero h1{font-size:clamp(2rem,5vw,3.2rem);margin:0 .2rem .7rem;}
+    .hero p{font-size:1.1rem;margin:0 auto 1.4rem;max-width:680px;}
+    .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;}
+    .btn{border:0;cursor:pointer;border-radius:999px;padding:.72rem 1.5rem;font-weight:700;transition:.2s;box-shadow:0 6px 15px rgba(15,79,166,.24);text-decoration:none;}
+    .btn--primary{background:#fff;color:var(--dark);} .btn--primary:hover{background:#f2f6ff;}
+    .btn--accent{background:#fedc8d;color:var(--dark);} .btn--accent:hover{background:#ffe8b8;}
+    .container{max-width:1120px;margin:0 auto;padding:2rem 1rem;}
+    .section-title{font-size:1.8rem;margin-bottom:.9rem;color:var(--dark);}
+    .grid{display:grid;gap:1rem;}
+    .cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+    .card{background:var(--card);border:1px solid #dfe7f2;border-radius:var(--radius);padding:1rem;box-shadow:0 3px 9px rgba(67,90,135,.08);}
+    .card h3{margin:0 0 .5rem;font-size:1.15rem;color:var(--dark);}
+    .card p{margin:.25rem 0;color:var(--muted);font-size:.95rem;}
+    .badge{display:inline-block;padding:.16rem .58rem;border-radius:999px;font-size:.75rem;font-weight:700;margin:.1rem .3rem .1rem 0;}
+    .badge.beginner{background:#ddf8e6;color:#05662b;}
+    .badge.intermediate{background:#fff6d8;color:#8a5c00;}
+    .badge.advanced{background:#ffe1ea;color:#a01f49;}
+    .timeline{list-style:none;margin:0;padding:0;}
+    .timeline li{padding:1rem;border-left:4px solid #3b82f6;background:#fff;margin-bottom:.75rem;border-radius:var(--radius);position:relative;}
+    .timeline li::before{content:'';position:absolute;top:1rem;left:-10px;width:18px;height:18px;background:#3b82f6;border-radius:50%;border:3px solid #fff;}
+    .form-col{display:grid;gap:1rem;}
+    label{font-weight:600;font-size:.9rem;color:var(--dark);}
+    input,select{width:100%;padding:.68rem .75rem;border:1px solid #ccd8ec;border-radius:8px;font-size:.95rem;}
+    .note{background:#eaf3ff;border-left:4px solid #3b82f6;padding:.85rem 1rem;border-radius:8px;color:var(--dark);font-size:.92rem;}
+    .alert{color:#0f4fa6;margin:.8rem 0;}
+    .hidden{display:none!important;}
+    .faq-item{margin-bottom:.8rem;}
+    .faq-item summary{cursor:pointer;font-weight:600;list-style:none;outline:none;padding:.55rem .8rem;border:1px solid #d7e5f8;border-radius:8px;background:#fafcff;}
+    .faq-item p{margin:.4rem .8rem .8rem;color:#4b556a;}
+    @media (max-width:768px){.hero{padding:4rem 1rem;} .card{padding:.9rem;} .btn{width:100%;justify-content:center;}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#home">MUN 202X</a>
+    <nav style="display:flex;gap:.7rem;flex-wrap:wrap;">
+      <a href="#schedule">Schedule</a>
+      <a href="#committees">Committees</a>
+      <a href="#submission">Position Papers</a>
+      <a href="#delegates">Delegates</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div>
+      <img src="https://via.placeholder.com/120x120?text=LOGO" alt="Conference Logo" style="border-radius:999px;margin-bottom:1rem;border:3px solid rgba(255,255,255,.50);" />
+      <h1>Welcome to the Model United Nations Conference</h1>
+      <p>Navigate the conference program, committee guides, submission portal and delegate handbook from a single page.</p>
+      <div class="cta">
+        <a class="btn btn--primary" href="#schedule">View Schedule</a>
+        <a class="btn btn--accent" href="#submission">Submit Paper</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="container">
+    <h2 class="section-title">Conference Day Schedule</h2>
+    <p class="note">This is your main schedule page. Change the times, rooms, and items quickly here.</p>
+    <ul class="timeline">
+      <li><strong>8:00 AM – 9:00 AM</strong> Registration &amp; Check-in — Main Lobby</li>
+      <li><strong>9:00 AM – 9:30 AM</strong> Opening Ceremony — Grand Hall</li>
+      <li><strong>9:30 AM – 11:00 AM</strong> Committee Session I — Committee Rooms</li>
+      <li><strong>11:00 AM – 11:30 AM</strong> Break — Cafeteria</li>
+      <li><strong>11:30 AM – 1:00 PM</strong> Committee Session II — Committee Rooms</li>
+      <li><strong>1:00 PM – 2:00 PM</strong> Lunch — Cafeteria</li>
+      <li><strong>2:00 PM – 3:30 PM</strong> Committee Session III — Committee Rooms</li>
+      <li><strong>3:30 PM – 4:00 PM</strong> Break — Cafeteria</li>
+      <li><strong>4:00 PM – 5:30 PM</strong> Committee Session IV — Committee Rooms</li>
+      <li><strong>5:30 PM – 6:00 PM</strong> Closing Ceremony &amp; Award Presentation — Grand Hall</li>
+    </ul>
+  </section>
+
+  <section id="committees" class="container">
+    <h2 class="section-title">Committees Information</h2>
+    <p class="alert">Download committee background guides from your asset store (or the file URLs in Wix). Replace these buttons with real links.</p>
+    <div class="grid cards">
+      <div class="card"><h3>UNSC</h3><span class="badge advanced">Advanced</span><p>Topic: Middle East security</p><p>15 delegates</p><button class="btn btn--primary" onclick="alert('UNSC background guide download demo')">Download Guide</button></div>
+      <div class="card"><h3>UNHRC</h3><span class="badge intermediate">Intermediate</span><p>Topic: Human Rights in Digital Age</p><p>30 delegates</p><button class="btn btn--primary" onclick="alert('UNHRC background guide download demo')">Download Guide</button></div>
+      <div class="card"><h3>ECOSOC</h3><span class="badge intermediate">Intermediate</span><p>Topic: Climate Finance</p><p>40 delegates</p><button class="btn btn--primary" onclick="alert('ECOSOC background guide download demo')">Download Guide</button></div>
+      <div class="card"><h3>DISEC</h3><span class="badge advanced">Advanced</span><p>Topic: Arms Control</p><p>35 delegates</p><button class="btn btn--primary" onclick="alert('DISEC background guide download demo')">Download Guide</button></div>
+      <div class="card"><h3>WHO</h3><span class="badge beginner">Beginner</span><p>Topic: Pandemic Preparedness</p><p>25 delegates</p><button class="btn btn--primary" onclick="alert('WHO background guide download demo')">Download Guide</button></div>
+      <div class="card"><h3>UNEP</h3><span class="badge beginner">Beginner</span><p>Topic: Biodiversity Conservation</p><p>30 delegates</p><button class="btn btn--primary" onclick="alert('UNEP background guide download demo')">Download Guide</button></div>
+    </div>
+  </section>
+
+  <section id="submission" class="container">
+    <h2 class="section-title">Position Paper Submission</h2>
+    <p class="note">Use this submission form for delegates. Wix requires a backend endpoint to persist files; this is front-end demo mode.</p>
+    <div class="card">
+      <form id="paperForm" class="form-col">
+        <label for="delegateName">Delegate Name *</label>
+        <input id="delegateName" name="delegateName" required />
+
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="country">Country/Delegation *</label>
+        <input id="country" name="country" required />
+
+        <label for="committee">Committee *</label>
+        <select id="committee" name="committee" required>
+          <option value="" disabled selected>Select committee</option>
+          <option>UNSC</option>
+          <option>UNHRC</option>
+          <option>ECOSOC</option>
+          <option>DISEC</option>
+          <option>WHO</option>
+          <option>UNEP</option>
+        </select>
+
+        <label for="pdfFile">Position Paper (PDF - max 5MB) *</label>
+        <input id="pdfFile" type="file" accept="application/pdf" required />
+
+        <div class="note">By submitting, you certify that this is your original work and properly cited. Plagiarism leads to disqualification.</div>
+
+        <button type="submit" class="btn btn--accent">Submit Position Paper</button>
+
+        <div id="submitMessage" class="note hidden"></div>
+      </form>
+    </div>
+  </section>
+
+  <section id="delegates" class="container">
+    <h2 class="section-title">Delegate Procedures & Rules</h2>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      <div class="card"><h3>Rules of Procedure</h3><p>Standard MUN procedure with motions, points, and voting. Always ask the chair before speaking.</p></div>
+      <div class="card"><h3>Dress Code</h3><p>Business formal mandatory. No jeans, shorts, or casual footwear. Non-compliance may restrict entry.</p></div>
+      <div class="card"><h3>Attendance</h3><p>Attendance is mandatory. Three unexcused absences can disqualify from awards.</p></div>
+      <div class="card"><h3>Speaker Etiquette</h3><p>Direct remarks to the chair. Respect others and maintain diplomatic language.</p></div>
+    </div>
+
+    <h3 style="margin-top:1.4rem;">FAQ</h3>
+    <div>
+      <details class="faq-item"><summary>What if I arrive late?</summary><p>Check in with the chair; frequent lateness can affect award eligibility.</p></details>
+      <details class="faq-item"><summary>Can I use electronics?</summary><p>Research use only during sessions; silence devices and follow chair directions.</p></details>
+      <details class="faq-item"><summary>How are awards chosen?</summary><p>Based on diplomacy, research, participation, speech, and position paper quality.</p></details>
+    </div>
+  </section>
+
+  <footer class="container" style="text-align:center;padding:1.5rem 1rem;color:#4f617f;font-size:.92rem;">
+    © 2026 Model UN Conference | info@modelun-conference.org | +1 (555) 123-4567
+  </footer>
+
+  <script>
+    const form = document.getElementById('paperForm');
+    const message = document.getElementById('submitMessage');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const fileInput = document.getElementById('pdfFile');
+      if (!fileInput.files.length) {
+        message.textContent = 'Please upload a PDF file.';
+        message.classList.remove('hidden');
+        return;
+      }
+      const file = fileInput.files[0];
+      if (file.type !== 'application/pdf') {
+        message.textContent = 'Only PDF files are allowed.';
+        message.classList.remove('hidden');
+        return;
+      }
+      if (file.size > 5 * 1024 * 1024) {
+        message.textContent = 'File size must be under 5MB.';
+        message.classList.remove('hidden');
+        return;
+      }
+      const record = {
+        delegateName: form.delegateName.value.trim(),
+        email: form.email.value.trim(),
+        country: form.country.value.trim(),
+        committee: form.committee.value,
+        fileName: file.name,
+        submittedAt: new Date().toISOString()
+      };
+      // demo persistence
+      window.localStorage.setItem('munSubmission_' + Date.now(), JSON.stringify(record));
+      message.textContent = 'Submission successful! (demo only — refresh to test again)';
+      message.classList.remove('hidden');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
