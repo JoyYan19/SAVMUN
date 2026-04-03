@@ -100,9 +100,10 @@
 
   <section id="submission" class="container">
     <h2 class="section-title">Position Paper Submission</h2>
-    <p class="note">Use this submission form for delegates. Submissions are sent via Formcarry (replace YOUR_FORMCARRY_URL with your actual endpoint).</p>
+    <p class="note">Use this submission form for delegates. Submissions are handled by Netlify Forms (deploy to Netlify to enable).</p>
     <div class="card">
-      <form id="paperForm" class="form-col" action="YOUR_FORMCARRY_URL" method="POST" enctype="multipart/form-data">
+      <form id="paperForm" class="form-col" data-netlify="true" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="paperForm" />
         <label for="delegateName">Delegate Name *</label>
         <input id="delegateName" name="delegateName" required />
 
@@ -154,34 +155,6 @@
     © 2026 SAVMUN, St. Dominic Savio Catholic High School Model UN | info@modelun-conference.org | +1 (555) 123-4567
   </footer>
 
-  <script>
-    const form = document.getElementById('paperForm');
-    const message = document.getElementById('submitMessage');
-    form.addEventListener('submit', function (e) {
-      const fileInput = document.getElementById('pdfFile');
-      if (!fileInput.files.length) {
-        e.preventDefault();
-        message.textContent = 'Please upload a PDF file.';
-        message.classList.remove('hidden');
-        return;
-      }
-      const file = fileInput.files[0];
-      if (file.type !== 'application/pdf') {
-        e.preventDefault();
-        message.textContent = 'Only PDF files are allowed.';
-        message.classList.remove('hidden');
-        return;
-      }
-      if (file.size > 5 * 1024 * 1024) {
-        e.preventDefault();
-        message.textContent = 'File size must be under 5MB.';
-        message.classList.remove('hidden');
-        return;
-      }
-      // If valid, let it submit
-      message.textContent = 'Submitting...';
-      message.classList.remove('hidden');
-    });
-  </script>
+
 </body>
 </html>
