@@ -100,11 +100,9 @@
 
   <section id="submission" class="container">
     <h2 class="section-title">Position Paper Submission</h2>
-    <p class="note">Use this submission form for delegates. Submissions are handled by Netlify Forms (deploy to Netlify to enable).</p>
+    <p class="note">Use this submission form for delegates. Submissions are sent via Formcarry (replace YOUR_FORMCARRY_ID with your actual ID).</p>
     <div class="card">
-      <form id="paperForm" class="form-col" data-netlify="true" method="POST" action="/" enctype="multipart/form-data">
-        <input type="hidden" name="form-name" value="paperForm" />
-        <input type="hidden" name="_gotcha" />
+      <form id="paperForm" class="form-col" action="https://formcarry.com/s/YOUR_FORMCARRY_ID" method="POST" enctype="multipart/form-data">
         <label for="delegateName">Delegate Name *</label>
         <input id="delegateName" name="delegateName" required />
 
