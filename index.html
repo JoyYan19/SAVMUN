@@ -100,9 +100,9 @@
 
   <section id="submission" class="container">
     <h2 class="section-title">Position Paper Submission</h2>
-    <p class="note">Use this submission form for delegates. Submissions are sent via Formcarry (replace YOUR_FORMCARRY_ID with your actual ID).</p>
+    <p class="note">Use this submission form for delegates. Submissions are handled by Netlify Forms (deploy to Netlify to enable).</p>
     <div class="card">
-      <form id="paperForm" class="form-col" action="https://formcarry.com/s/YOUR_FORMCARRY_ID" method="POST" enctype="multipart/form-data">
+      <form id="paperForm" class="form-col" data-netlify="true" method="POST" enctype="multipart/form-data">
         <label for="delegateName">Delegate Name *</label>
         <input id="delegateName" name="delegateName" required />
 
@@ -122,7 +122,7 @@
         </select>
 
         <label for="pdfFile">Position Paper (PDF - max 5MB) *</label>
-        <input id="pdfFile" type="file" accept="application/pdf" required />
+        <input id="pdfFile" type="file" name="file" accept="application/pdf" required />
 
         <div class="note">By submitting, you certify that this is your original work and properly cited. Plagiarism leads to disqualification.</div>
 
