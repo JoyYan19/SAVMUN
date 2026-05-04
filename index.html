@@ -156,6 +156,31 @@
     © 2026 SAVMUN, St. Dominic Savio Catholic High School Model UN | info@modelun-conference.org | +1 (555) 123-4567
   </footer>
 
+  <script>
+    document.getElementById('paperForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('submitMessage').textContent = 'Thank you! Your position paper has been submitted successfully. You will receive a confirmation email shortly.';
+          document.getElementById('submitMessage').classList.remove('hidden');
+          form.reset();
+        } else {
+          document.getElementById('submitMessage').textContent = 'There was an error submitting your form. Please try again.';
+          document.getElementById('submitMessage').classList.remove('hidden');
+        }
+      })
+      .catch(error => {
+        document.getElementById('submitMessage').textContent = 'There was an error submitting your form. Please try again.';
+        document.getElementById('submitMessage').classList.remove('hidden');
+      });
+    });
+  </script>
 
 </body>
 </html>
